@@ -163,7 +163,19 @@ A cleaned and model-ready dataset was generated and exported as:
 tweets_cleaned_final.csv
 ```
 
+# Train-Test Split
+
+Dataset partitioning:
+
+* Training Set: 80%
+* Testing Set: 20%
+
+Stratified sampling was used to preserve class distributions.
+
 ---
+## Text Vectorization
+
+TF-IDF (Term Frequency-Inverse Document Frequency) was applied to convert tweet text into numerical feature vectors.
 
 # Feature Engineering
 
@@ -187,28 +199,12 @@ Brand-related target variables were encoded using one-hot encoding.
 
 ---
 
-## Text Vectorization
-
-TF-IDF (Term Frequency-Inverse Document Frequency) was applied to convert tweet text into numerical feature vectors.
-
 ### Configuration
 
 ```python
 TfidfVectorizer(max_features=5000)
 ```
 
----
-
-# Train-Test Split
-
-Dataset partitioning:
-
-* Training Set: 80%
-* Testing Set: 20%
-
-Stratified sampling was used to preserve class distributions.
-
----
 # Project Visualizations & Insights
 
 # Key Analytical Findings
@@ -401,8 +397,6 @@ A substantial portion of sentiment was driven by event-related engagement rather
 
 - Negative indicators are less dominant, confirming that positive and neutral sentiments prevail - Didn't (0.36), Nothing (0.47)
 
-
-
 # Conclusion
 The combination of rigorous preprocessing, TF-IDF feature extraction, and LinearSVC classification produced a robust sentiment prediction system. While neutral sentiment remained challenging to distinguish, the final model demonstrated strong capability in identifying positive and negative brand perceptions.
 
@@ -419,14 +413,12 @@ The findings reveal that most social media discussions are neutral, while positi
 ---
 # Next Steps
 
+* Apply resampling techniques for imbalance
 * Improve feature engineering.
 * Conduct deeper error analysis.
-* Develop a Flask, FastAPI, or Django application
-* Integrate live Twitter/X streaming.
-* Support multilingual sentiment analysis.
 
 
----
+
 
 
 
