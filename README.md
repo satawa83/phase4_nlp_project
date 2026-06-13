@@ -374,39 +374,32 @@ Performance was assessed using:
 
 # Model Interpretability
 
-A major strength of this project is the incorporation of Explainable AI techniques.
-
 ## Local Interpretability using LIME
 
 Local Interpretable Model-Agnostic Explanations (LIME) was used to explain individual predictions.
 
-For each tweet, LIME identifies:
+- Customer sentiment is often tied to specific products rather than brands in general
 
-* Words contributing positively to a sentiment prediction.
-* Words contributing negatively to a sentiment prediction.
-* Relative influence of each feature.
-
-This enables stakeholders to understand why the model reached a specific decision.
-
----
+iPhone, iPad, Android, Google, Apple
 
 ## Global Interpretability
 
-To understand model behavior at scale:
+- Brand and Product Mentions Strongly Influence Predictions
 
-1. LIME explanations were generated for multiple test samples.
-2. Word importance scores were aggregated.
-3. Global feature importance rankings were created.
+Apple (1.99), iPad (2.74), iPhone (0.54), App (0.79), Store (0.75)
 
-### Outcomes
+Insight:
+Customer emotions are primarily expressed in relation to product experiences, app usage, and service interactions.
 
-The analysis identified:
+- Event-Related Conversations Significantly Shape Sentiment
 
-* Most influential positive sentiment terms.
-* Most influential negative sentiment terms.
-* High-impact words consistently driving model decisions.
+Link (5.38), Austin (0.87), Attendee (0.35)
 
----
+Insight:
+
+A substantial portion of sentiment was driven by event-related engagement rather than routine product usage
+
+- Negative indicators are less dominant, confirming that positive and neutral sentiments prevail - Didn't (0.36), Nothing (0.47)
 
 
 
