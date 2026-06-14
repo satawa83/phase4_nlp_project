@@ -333,7 +333,7 @@ Performance was assessed using:
 * F1-Score
 * Confusion Matrix
 
-## Key Findings
+## Insights
 
 ### Negative Sentiment
 
