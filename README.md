@@ -4,17 +4,17 @@
 
 This project develops and evaluates a Natural Language Processing (NLP) model for analyzing sentiment expressed toward technology brands and products in Twitter conversations. The study focuses primarily on Apple and Google-related discussions and aims to understand customer opinions, emotional responses, and complaint patterns embedded within social media text.
 
-# Business Problem
+## Business Problem
 
 Organizations increasingly rely on social media platforms to understand customer experiences, monitor brand perception, and identify emerging issues. However, the large volume of user-generated content makes manual analysis difficulty.
 
-# Research Objectives
+## Research Objectives
 
-## Main Objective
+### Main Objective
 
 To develop and evaluate a Natural Language Processing model for sentiments expressed in brand and product emotions.
 
-## Specific Objectives
+### Specific Objectives
 
 1. To Determine the extent to which tweet content reflects sentiment.
 2. To Assess the distribution of sentiment across tweets based on brands mentioned.
@@ -22,7 +22,7 @@ To develop and evaluate a Natural Language Processing model for sentiments expre
 4. To Examine the influence of tweet content and sentiment on target categories.
 5. To Analyze customer complaints expressed toward specific brand products.
 
-# Research Questions
+### Research Questions
 
 - To what extent does tweet content reflect sentiment?
 - How is sentiment distributed across tweets based on brands mentioned?
@@ -30,18 +30,18 @@ To develop and evaluate a Natural Language Processing model for sentiments expre
 - How do tweet content and sentiment influence target categories?
 - What customer complaints are expressed toward specific brand products?
 
-# Stakeholders
+## Stakeholders
 * Apple Inc.
 * Google
 * Consumers
 
-# Dataset Description
+## Dataset Description
 
-## Source
+### Source
 
 CrowdFlower Twitter Sentiment Dataset (2013)
 
-## Dataset Characteristics
+### Dataset Characteristics
 
 | Attribute | Description                     |
 | --------- | ------------------------------- |
@@ -57,7 +57,7 @@ CrowdFlower Twitter Sentiment Dataset (2013)
 | Target    | Brand or product mentioned               |
 | Sentiment | Emotion directed toward brand or product |
 
-# Data Inspection and Quality Assessment
+### Data Inspection and Quality Assessment
 
 The dataset quality assessment including:-
 
@@ -76,9 +76,9 @@ The dataset quality assessment including:-
 * Filled missing target values with "No specific brand".
 * Normalized categorical labels.
 
-# Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 
-## Univariate Analysis
+### Univariate Analysis
 
 The distribution of sentiment categories revealed:
 
@@ -91,7 +91,7 @@ The distribution of sentiment categories revealed:
 
 Approximately 59.3% of all tweets were classified as Neutral, indicating that most conversations mention brands or products without expressing strong emotional opinions.
 
-## Bivariate Analysis
+### Bivariate Analysis
 
 Sentiment was analyzed across major brands:
 
@@ -108,7 +108,7 @@ Sentiment was analyzed across major brands:
 * Negative sentiment was relatively low across both brands.
 * Positive sentiment significantly exceeded negative sentiment.
 
-## Multivariate Analysis
+### Multivariate Analysis
 
 Cross-tabulation between target categories and sentiment classes revealed:
 
@@ -116,18 +116,18 @@ Cross-tabulation between target categories and sentiment classes revealed:
 * Product-specific discussions generated more emotional engagement.
 * Positive sentiment remained dominant among branded conversations.
 
-# Data Cleaning and Text Preprocessing
+## Data Cleaning and Text Preprocessing
 
 The text preprocessing pipeline included:
 
-## Text Normalization
+### Text Normalization
 
 * Lowercasing
 * HTML removal
 * Unicode normalization
 * Contraction expansion
 
-## Noise Removal
+### Noise Removal
 
 * URLs
 * Mentions
@@ -136,23 +136,23 @@ The text preprocessing pipeline included:
 * Numbers
 * Special characters
 
-## Linguistic Processing
+### Linguistic Processing
 
 * Tokenization
 * Stopword removal
 * Lemmatization
 * Whitespace normalization
 
-## Output
+### Output
 
 A cleaned and model-ready dataset was generated and exported as:
 
 ```text
 tweets_cleaned_final.csv
 ```
-# Feature Engineering
+## Feature Engineering
 
-## Sentiment Label Consolidation
+### Sentiment Label Consolidation
 
 Original sentiment classes were transformed into:
 
@@ -166,13 +166,13 @@ The "I Can't Tell" category was removed from modeling to improve classification 
 
 ---
 
-## Target Encoding
+### Target Encoding
 
 Brand-related target variables were encoded using one-hot encoding.
 
 ---
 
-# Train-Test Split
+### Train-Test Split
 
 Dataset partitioning:
 
@@ -182,52 +182,52 @@ Dataset partitioning:
 Stratified sampling was used to preserve class distributions.
 
 ---
-## Text Vectorization
+### Text Vectorization
 
 TF-IDF (Term Frequency-Inverse Document Frequency) was applied to convert tweet text into numerical feature vectors.
 
-### Configuration
+#### Configuration
 
 ```python
 TfidfVectorizer(max_features=5000)
 ```
 
-# Project Visualizations & Insights
+## Project Visualizations & Insights
 
-## Objective 1: Extent to Which Tweet Content Reflects Sentiment
+### Objective 1: Extent to Which Tweet Content Reflects Sentiment
 
 ![Sentiment Distribution](./sentiment_distribution.png)
 
-Insight
+### Insight
 * Neutral sentiment accounted for approximately 59.3% of the entiredataset of (5,371 tweets).
 * Strong emotional opinions represented a smaller proportion of conversations.
 
-## Objective 2: Sentiment Distribution Across Brands
+### Objective 2: Sentiment Distribution Across Brands
 
 ![Tweet Text Brand Sentiment](./tweet_text_brand_sentiment.png)
 
-Insight
+### Insight
 
 For both companies, the majority of the conversation is Neutral.Google leans more heavily into neutrality at 63.8%., Apple sits at 51.4%.Apple Negative Sentiment: 7.8%, Google Negative Sentiment: 5.4%
 
-## Objective 3: Distribution of Target Subcategories
+### Objective 3: Distribution of Target Subcategories
 
 ![Target Distribution in Tweets](./target_distribution_in_tweets.png)
 
-Insight 
+### Insight 
 
 - The "No Specific Brand" category represented approximately 63.8% of entire dataset which translate to 5,784 tweets, highlighting that many discussions referenced products or industry topics without explicitly naming a brand.
 
-## Objective 4: Influence of Tweet Content and Sentiment
+### Objective 4: Influence of Tweet Content and Sentiment
 
 ![Sentiment Text Driving Target](./sentiment_text_driving_target.png)
 
-Insight
+### Insight
 
 - Positive sentiment emerged as the strongest driver of brand-related discussions.Apple Positive: 80.6%, Google Positive: 81.7%
 - Negative sentiment is the secondary driver, accounting for 16.3% of Apple labels and 15.0% of Google labels.
 
-## Objective 5: Customer Complaint Analysis
+### Objective 5: Customer Complaint Analysis
 Customer complaints expressed in tweets toward specific brand products
 
 ![Negative Phrase Analysis](./negative_phrase_analysis.png)
@@ -254,9 +254,9 @@ Most common complaints included:
 
 ---
 
-# Machine Learning Models
+## Machine Learning Models
 
-## Baseline Model
+### Baseline Model
 
 ### Logistic Regression
 
@@ -266,7 +266,7 @@ Purpose:
 * Detect data quality issues.
 * Provide benchmark comparisons.
 
-### Findings
+### Insight
 
 The model achieved moderate accuracy but showed strong bias toward the majority class due to class imbalance.
 
@@ -287,7 +287,7 @@ The project employed LinearSVC because it performs exceptionally well on high-di
 
 ---
 
-# Class Imbalance Handling
+### Class Imbalance Handling
 
 To improve minority-class detection:
 
@@ -303,7 +303,7 @@ The balanced model improved recall for minority sentiment classes while maintain
 
 ---
 
-# Hyperparameter Optimization
+### Hyperparameter Optimization
 
 GridSearchCV was used to optimize model parameters.
 
@@ -323,7 +323,7 @@ LinearSVC(
 ```
 ---
 
-# Model Evaluation
+## Model Evaluation
 
 Performance was assessed using:
 
@@ -333,7 +333,7 @@ Performance was assessed using:
 * F1-Score
 * Confusion Matrix
 
-## Insights
+### Insights
 
 ### Negative Sentiment
 
@@ -353,9 +353,9 @@ Performance was assessed using:
 
 ---
 
-# Model Interpretability
+## Model Interpretability
 
-## Local Interpretability using LIME
+### Local Interpretability using LIME
 
 Local Interpretable Model-Agnostic Explanations (LIME) was used to explain individual predictions.
 
@@ -363,7 +363,7 @@ Local Interpretable Model-Agnostic Explanations (LIME) was used to explain indiv
 
 iPhone, iPad, Android, Google, Apple
 
-## Global Interpretability
+### Global Interpretability
 
 - Brand and Product Mentions Strongly Influence Predictions
 
@@ -382,7 +382,7 @@ A substantial portion of sentiment was driven by event-related engagement rather
 
 - Negative indicators are less dominant, confirming that positive and neutral sentiments prevail - Didn't (0.36), Nothing (0.47)
 
-# Conclusion
+## Conclusion
 
 - The combination of rigorous preprocessing, TF-IDF feature extraction, and LinearSVC classification produced a robust sentiment prediction system. 
 - Neutral sentiment remained challenging to distinguish, 
@@ -390,7 +390,7 @@ A substantial portion of sentiment was driven by event-related engagement rather
 - Customer complaints identified provide valuable insights for product improvement and customer experience management.
 
 ---
-# Recommendations
+## Recommendations
 
 - Deploy the model as a real-time sentiment to resolve customer complaints promptly.
 - Expand the dataset with more recent social media data.
@@ -398,7 +398,7 @@ A substantial portion of sentiment was driven by event-related engagement rather
 - Continuously retrain models to adapt to evolving language patterns.
 
 ---
-# Next Steps
+## Next Steps
 
 * Apply resampling techniques for imbalance
 * Improve feature engineering.
