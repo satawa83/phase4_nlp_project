@@ -4,20 +4,9 @@
 
 This project develops and evaluates a Natural Language Processing (NLP) model for analyzing sentiment expressed toward technology brands and products in Twitter conversations. The study focuses primarily on Apple and Google-related discussions and aims to understand customer opinions, emotional responses, and complaint patterns embedded within social media text.
 
-The project combines exploratory data analysis, text preprocessing, feature engineering, machine learning classification, and model interpretability techniques to transform unstructured tweet data into actionable insights.
-
 # Business Problem
 
-Organizations increasingly rely on social media platforms to understand customer experiences, monitor brand perception, and identify emerging issues. However, the large volume of user-generated content makes manual analysis impractical.
-
-This project addresses the challenge of automatically identifying sentiment expressed toward brands and products, enabling organizations to:
-
-* Monitor brand reputation.
-* Detect customer dissatisfaction early.
-* Identify common product issues.
-* Measure public perception.
-* Support customer experience improvement initiatives.
-* Inform product development and marketing strategies.
+Organizations increasingly rely on social media platforms to understand customer experiences, monitor brand perception, and identify emerging issues. However, the large volume of user-generated content makes manual analysis difficulty.
 
 # Research Objectives
 
@@ -35,14 +24,13 @@ To develop and evaluate a Natural Language Processing model for sentiments expre
 
 # Research Questions
 
-1. To what extent does tweet content reflect sentiment?
-2. How is sentiment distributed across tweets based on brands mentioned?
-3. What is the distribution of target subcategories represented within tweet content?
-4. How do tweet content and sentiment influence target categories?
-5. What customer complaints are expressed toward specific brand products?
+- To what extent does tweet content reflect sentiment?
+- How is sentiment distributed across tweets based on brands mentioned?
+- What is the distribution of target subcategories represented within tweet content?
+- How do tweet content and sentiment influence target categories?
+- What customer complaints are expressed toward specific brand products?
 
 # Stakeholders
-
 * Apple Inc.
 * Google
 * Consumers
@@ -71,7 +59,7 @@ CrowdFlower Twitter Sentiment Dataset (2013)
 
 # Data Inspection and Quality Assessment
 
-The dataset underwent extensive quality assessment including:
+The dataset quality assessment including:-
 
 * Structure verification
 * Missing value analysis
@@ -99,7 +87,7 @@ The distribution of sentiment categories revealed:
 * Negative sentiment forms the minority class.
 * "I Can't Tell" responses were relatively uncommon.
 
-### Key Insight
+### Insight
 
 Approximately 59.3% of all tweets were classified as Neutral, indicating that most conversations mention brands or products without expressing strong emotional opinions.
 
@@ -113,7 +101,7 @@ Sentiment was analyzed across major brands:
 * iPhone
 * iPad
 
-### Key Findings
+### Insight
 
 * Both Apple and Google conversations were predominantly neutral.
 * Apple generated slightly stronger emotional responses than Google.
@@ -162,21 +150,6 @@ A cleaned and model-ready dataset was generated and exported as:
 ```text
 tweets_cleaned_final.csv
 ```
-
-# Train-Test Split
-
-Dataset partitioning:
-
-* Training Set: 80%
-* Testing Set: 20%
-
-Stratified sampling was used to preserve class distributions.
-
----
-## Text Vectorization
-
-TF-IDF (Term Frequency-Inverse Document Frequency) was applied to convert tweet text into numerical feature vectors.
-
 # Feature Engineering
 
 ## Sentiment Label Consolidation
@@ -199,6 +172,20 @@ Brand-related target variables were encoded using one-hot encoding.
 
 ---
 
+# Train-Test Split
+
+Dataset partitioning:
+
+* Training Set: 80%
+* Testing Set: 20%
+
+Stratified sampling was used to preserve class distributions.
+
+---
+## Text Vectorization
+
+TF-IDF (Term Frequency-Inverse Document Frequency) was applied to convert tweet text into numerical feature vectors.
+
 ### Configuration
 
 ```python
@@ -206,8 +193,6 @@ TfidfVectorizer(max_features=5000)
 ```
 
 # Project Visualizations & Insights
-
-# Key Analytical Findings
 
 ## Objective 1: Extent to Which Tweet Content Reflects Sentiment
 
@@ -398,17 +383,19 @@ A substantial portion of sentiment was driven by event-related engagement rather
 - Negative indicators are less dominant, confirming that positive and neutral sentiments prevail - Didn't (0.36), Nothing (0.47)
 
 # Conclusion
-The combination of rigorous preprocessing, TF-IDF feature extraction, and LinearSVC classification produced a robust sentiment prediction system. While neutral sentiment remained challenging to distinguish, the final model demonstrated strong capability in identifying positive and negative brand perceptions.
 
-The findings reveal that most social media discussions are neutral, while positive sentiment substantially outweighs negative sentiment across major brands. Customer complaints identified through the analysis provide valuable insights for product improvement and customer experience management.
+- The combination of rigorous preprocessing, TF-IDF feature extraction, and LinearSVC classification produced a robust sentiment prediction system. 
+- Neutral sentiment remained challenging to distinguish, 
+- Most social media discussions are neutral, while positive sentiment substantially outweighs negative sentiment across major brands. 
+- Customer complaints identified provide valuable insights for product improvement and customer experience management.
 
 ---
 # Recommendations
 
-1. Deploy the model as a real-time sentiment monitoring solution.
-2. Expand the dataset with more recent social media data.
-3. Improve minority-class detection using advanced imbalance handling techniques.
-5. Continuously retrain models to adapt to evolving language patterns.
+- Deploy the model as a real-time sentiment to resolve customer complaints promptly.
+- Expand the dataset with more recent social media data.
+- Improve minority-class detection using advanced imbalance handling techniques.
+- Continuously retrain models to adapt to evolving language patterns.
 
 ---
 # Next Steps
